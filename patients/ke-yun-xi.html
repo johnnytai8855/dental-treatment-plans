@@ -4,424 +4,559 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light only">
-<title>葛芸希 小姐 - 前牙美學修復計畫 ｜ 陽安牙醫診所</title>
+<meta name="supported-color-schemes" content="light">
+<title>葛芸希 ─ 前牙美學修復計畫</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Arial', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 24px 20px 60px;
-    background: #faf8f3;
-    color: #1a2744;
-    line-height: 1.75;
-    -webkit-font-smoothing: antialiased;
-  }
+:root {
+  color-scheme: light only;
+  --navy: #1a2744;
+  --navy-light: #2d3f6b;
+  --gold: #9c7a42;
+  --gold-light: #d4b483;
+  --gold-bright: #c89a4f;
+  --cream: #faf8f3;
+  --text: #1f1f1f;
+  --text-mid: #4a4a4a;
+  --text-light: #6b6b6b;
+  --border: #e8e4dc;
+}
 
-  /* Header */
-  .doctor-header {
-    text-align: center;
-    padding: 28px 20px 24px;
-    border-bottom: 1px solid #e8e4dc;
-    margin-bottom: 32px;
+/* 強制淺色模式 - 對抗 LINE/FB 等 in-app browser 的深色模式覆蓋 */
+html, body {
+  background-color: #faf8f3 !important;
+  color: #1f1f1f !important;
+}
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #faf8f3 !important;
+    color: #1f1f1f !important;
   }
-  .doctor-header .doctor-name {
-    font-size: 20px;
-    font-weight: 600;
-    color: #1a2744;
-    letter-spacing: 1px;
+  .section-title, .card h3, .plan-title, .timeline-block-title,
+  .pay-step-content strong, .faq-item summary, .plan-intro strong,
+  .compare-table tbody td:first-child, .compare-table .total-row td {
+    color: #1a2744 !important;
   }
-  .doctor-header .clinic-name {
-    font-size: 13px;
-    color: #666;
-    margin-top: 6px;
-    letter-spacing: 0.5px;
+  .plan-intro, .card p, .faq-body, .fee-note,
+  .treatment-table tbody td, .pros-cons-row {
+    color: #4a4a4a !important;
   }
-  .doctor-header .divider {
-    width: 40px;
-    height: 2px;
-    background: #9c7a42;
-    margin: 14px auto 0;
-    border-radius: 2px;
+  .treatment-table, .compare-table,
+  .plan-block, .card, .faq-item, .timeline-block {
+    background-color: #ffffff !important;
   }
-
-  /* Title */
-  .title-block { text-align: center; margin-bottom: 40px; }
-  .title-block .eyebrow {
-    font-size: 12px;
-    color: #9c7a42;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
+  .treatment-table thead th, .compare-table thead th {
+    background-color: #1a2744 !important;
+    color: #ffffff !important;
   }
-  .title-block h1 {
-    font-size: 26px;
-    font-weight: 600;
-    color: #1a2744;
-    margin: 0 0 8px;
-    line-height: 1.4;
+  .compare-table .total-row {
+    background-color: rgba(184,147,90,0.15) !important;
   }
-  .title-block .patient-name {
-    font-size: 15px;
-    color: #666;
-    margin-top: 10px;
-  }
-  .title-block .patient-name strong {
-    color: #1a2744;
-    font-weight: 600;
-    margin-right: 6px;
-  }
-
-  /* Section card */
   section {
-    background: white;
-    border: 1px solid #e8e4dc;
-    border-left: 4px solid #9c7a42;
-    border-radius: 8px;
-    padding: 26px 28px;
-    margin-bottom: 20px;
+    background-color: transparent !important;
   }
-  section h2 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #1a2744;
-    margin: 0 0 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #f0ece3;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  section#fee, section#faq {
+    background-color: rgba(184,147,90,0.05) !important;
   }
-  section h2 .num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 26px;
-    height: 26px;
-    background: #9c7a42;
-    color: white;
-    font-size: 13px;
-    border-radius: 50%;
-    font-weight: 600;
-    flex-shrink: 0;
+  .nav {
+    background-color: rgba(250,248,243,0.97) !important;
   }
-  section h3 {
-    font-size: 15px;
-    font-weight: 600;
-    color: #1a2744;
-    margin: 18px 0 8px;
+  .nav a {
+    color: #1a2744 !important;
   }
-  section p {
-    margin: 0 0 10px;
-    color: #333;
-    font-size: 15px;
-  }
-  section ul {
-    margin: 8px 0 12px;
-    padding-left: 20px;
-    color: #333;
-    font-size: 15px;
-  }
-  section ul li { margin-bottom: 6px; }
+}
 
-  /* Timeline */
-  .timeline { list-style: none; padding: 0; margin: 0; }
-  .timeline li {
-    position: relative;
-    padding: 14px 0 14px 30px;
-    border-bottom: 1px dashed #efebe2;
-  }
-  .timeline li:last-child { border-bottom: none; }
-  .timeline li::before {
-    content: "";
-    position: absolute;
-    left: 6px; top: 22px;
-    width: 8px; height: 8px;
-    background: #9c7a42;
-    border-radius: 50%;
-  }
-  .timeline li::after {
-    content: "";
-    position: absolute;
-    left: 9px; top: 30px;
-    bottom: -1px;
-    width: 2px;
-    background: #e8e4dc;
-  }
-  .timeline li:last-child::after { display: none; }
-  .timeline .phase {
-    font-size: 13px;
-    color: #9c7a42;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-  }
-  .timeline .phase-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: #1a2744;
-    margin-bottom: 2px;
-  }
-  .timeline .phase-desc {
-    font-size: 14px;
-    color: #555;
-  }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  color: var(--text); background: var(--cream);
+  line-height: 1.7; font-weight: 400;
+}
+.hero {
+  min-height: 95vh;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  color: white; display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden; padding: 2rem 1.2rem;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(184,147,90,0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(184,147,90,0.12) 0%, transparent 50%);
+}
+.hero-content { position: relative; text-align: center; max-width: 600px; }
+.hero-badge {
+  display: inline-block; padding: 0.45rem 1.3rem;
+  border: 1px solid var(--gold-bright); color: var(--gold-light);
+  border-radius: 40px; font-size: 0.75rem; letter-spacing: 0.3em;
+  margin-bottom: 1.8rem; font-weight: 600;
+}
+.hero h1 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 600; letter-spacing: 0.1em;
+  margin-bottom: 1rem; line-height: 1.4; color: #ffffff;
+}
+.patient-name {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.3rem; font-weight: 500; letter-spacing: 0.15em;
+  color: var(--gold-light); margin-bottom: 1.5rem;
+}
+.clinic-info {
+  font-size: 0.88rem; letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.92); font-weight: 400;
+}
+.clinic-info span:not(:last-child)::after {
+  content: ''; display: inline-block; width: 1px; height: 12px;
+  background: rgba(255,255,255,0.5); margin: 0 0.8rem; vertical-align: middle;
+}
+.scroll-hint {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  font-size: 0.72rem; letter-spacing: 0.3em;
+  color: rgba(255,255,255,0.75); font-weight: 500;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 0.55; } 50% { opacity: 0.95; } }
 
-  /* Cost table */
-  .cost-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    font-size: 15px;
-  }
-  .cost-table th,
-  .cost-table td {
-    padding: 12px 10px;
-    text-align: left;
-    border-bottom: 1px solid #f0ece3;
-  }
-  .cost-table th {
-    background: #faf8f3;
-    color: #1a2744;
-    font-weight: 600;
-    font-size: 14px;
-  }
-  .cost-table td.amount {
-    text-align: right;
-    font-variant-numeric: tabular-nums;
-    color: #1a2744;
-    font-weight: 500;
-  }
-  .cost-table tr.total td {
-    font-weight: 600;
-    color: #1a2744;
-    border-top: 2px solid #9c7a42;
-    border-bottom: none;
-    padding-top: 14px;
-    font-size: 16px;
-  }
-  .cost-note {
-    margin-top: 14px;
-    padding: 12px 14px;
-    background: #faf8f3;
-    border-radius: 6px;
-    font-size: 13px;
-    color: #666;
-    line-height: 1.6;
-  }
+.nav {
+  position: sticky; top: 0;
+  background: rgba(250,248,243,0.97); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border); z-index: 100;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+}
+.nav-inner {
+  display: flex; justify-content: flex-start; gap: 0;
+  white-space: nowrap; min-width: max-content; padding: 0 1rem;
+}
+.nav a {
+  padding: 1rem 0.9rem; color: var(--navy); text-decoration: none;
+  font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em;
+  border-bottom: 2px solid transparent; transition: all 0.3s;
+  flex-shrink: 0; opacity: 0.75;
+}
+.nav a.active { border-bottom-color: var(--gold); opacity: 1; font-weight: 700; }
 
-  /* Notes list */
-  .note-list { padding-left: 0; list-style: none; }
-  .note-list li {
-    padding: 10px 0 10px 24px;
-    position: relative;
-    border-bottom: 1px dashed #f0ece3;
-  }
-  .note-list li:last-child { border-bottom: none; }
-  .note-list li::before {
-    content: "✓";
-    position: absolute;
-    left: 0; top: 10px;
-    color: #9c7a42;
-    font-weight: 700;
-  }
+section { padding: 3.5rem 0; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 1.2rem; }
+.section-label {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 0.8rem; letter-spacing: 0.35em;
+  color: var(--gold); text-transform: uppercase;
+  display: block; margin-bottom: 0.8rem; font-weight: 600;
+}
+.section-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(1.6rem, 5vw, 2.1rem);
+  color: var(--navy); font-weight: 700;
+  margin-bottom: 2rem; letter-spacing: 0.05em;
+}
 
-  /* Signature */
-  .signature-block {
-    margin-top: 28px;
-    padding: 20px 22px;
-    background: white;
-    border: 1px solid #e8e4dc;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #555;
-    text-align: center;
-    line-height: 1.8;
-  }
-  .signature-block strong { color: #1a2744; }
+.card {
+  background: white; border: 1px solid var(--border); border-left: 3px solid var(--gold);
+  padding: 1.2rem 1.3rem; margin-bottom: 1rem; border-radius: 2px;
+}
+.card-icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
+.card h3 {
+  font-family: 'Noto Serif TC', serif;
+  color: var(--navy); font-size: 1.05rem; font-weight: 700;
+  margin-bottom: 0.4rem; letter-spacing: 0.05em;
+}
+.card p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.75; }
 
-  /* Footer */
-  .footer {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #e8e4dc;
-    font-size: 12px;
-    color: #999;
-    letter-spacing: 0.5px;
-  }
-  .footer a {
-    color: #9c7a42;
-    text-decoration: none;
-    margin-left: 8px;
-  }
+.plan-intro {
+  margin-bottom: 1.5rem; color: var(--text-mid);
+  font-size: 0.92rem; line-height: 1.8;
+}
+.plan-intro strong { color: var(--navy); font-weight: 700; }
 
-  /* Mobile */
-  @media (max-width: 560px) {
-    body { padding: 16px 14px 40px; }
-    .title-block h1 { font-size: 22px; }
-    section { padding: 20px 18px; }
-    section h2 { font-size: 16px; }
-    .cost-table th, .cost-table td { padding: 10px 6px; font-size: 14px; }
-  }
+.plan-block {
+  background: white; border: 1px solid var(--border); border-radius: 4px;
+  margin-bottom: 1.2rem; overflow: hidden;
+}
+.plan-header {
+  padding: 1.3rem 1.3rem 1.1rem;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(184,147,90,0.06) 0%, transparent 100%);
+}
+.plan-tag {
+  display: inline-block; font-size: 0.72rem; letter-spacing: 0.2em;
+  padding: 0.25rem 0.8rem; border-radius: 30px;
+  font-weight: 600; margin-bottom: 0.6rem; color: white;
+}
+.plan-tag.tag-a { background: var(--navy); }
+.plan-tag.tag-b { background: var(--gold); }
+.plan-tag.tag-c { background: #8b6f47; }
+.plan-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.2rem; color: var(--navy); font-weight: 700;
+  margin-bottom: 0.35rem; letter-spacing: 0.05em; line-height: 1.5;
+}
+.plan-subtitle { font-size: 0.85rem; color: var(--text-mid); font-weight: 500; }
+.plan-body { padding: 1.2rem 1.3rem; }
+.plan-pros-cons { margin-bottom: 1rem; }
+.pros-cons-row {
+  display: flex; gap: 0.6rem; padding: 0.5rem 0;
+  font-size: 0.88rem; line-height: 1.6;
+  border-bottom: 1px dashed var(--border); color: var(--text);
+}
+.pros-cons-row:last-child { border-bottom: none; }
+.pros-cons-icon { flex-shrink: 0; width: 20px; font-weight: 700; }
+.pros-cons-icon.yes { color: #3d6b4a; }
+.pros-cons-icon.no { color: #b5603f; }
 
-  @media print {
-    body { background: white; }
-    section { break-inside: avoid; }
-  }
+.treatment-table {
+  width: 100%; border-collapse: collapse; font-size: 0.88rem;
+  background: white; border-radius: 4px; overflow: hidden;
+  border: 1px solid var(--border);
+}
+.treatment-table thead th {
+  background: var(--navy); color: white; font-weight: 600;
+  padding: 0.8rem 0.7rem; text-align: left;
+  font-size: 0.8rem; letter-spacing: 0.1em;
+}
+.treatment-table tbody td {
+  padding: 0.75rem 0.7rem; border-bottom: 1px solid var(--border);
+  vertical-align: top; color: var(--text);
+}
+.treatment-table tbody tr:last-child td { border-bottom: none; }
+.treatment-table .center { text-align: center; }
+
+.compare-table {
+  width: 100%; border-collapse: collapse; font-size: 0.85rem;
+  background: white; margin-bottom: 1rem; border-radius: 4px;
+  overflow: hidden; border: 1px solid var(--border);
+}
+.compare-table th, .compare-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 0.5rem; text-align: center; vertical-align: middle;
+}
+.compare-table thead th {
+  background: var(--navy); color: white; font-weight: 600;
+  font-size: 0.78rem; letter-spacing: 0.05em;
+}
+.compare-table thead th:first-child { text-align: left; padding-left: 0.9rem; }
+.compare-table tbody td:first-child {
+  text-align: left; padding-left: 0.9rem;
+  color: var(--text); font-weight: 500;
+}
+.compare-table .total-row {
+  background: rgba(184,147,90,0.15); font-weight: 700; color: var(--navy);
+}
+.compare-table .total-row td { padding: 0.95rem 0.5rem; font-size: 0.92rem; }
+
+.fee-note {
+  font-size: 0.82rem; color: var(--text-mid);
+  margin: 0.6rem 0 0; padding-left: 0.8rem;
+  border-left: 2px solid var(--gold-light); line-height: 1.7;
+}
+
+.timeline-block {
+  background: white; border: 1px solid var(--border); border-radius: 4px;
+  padding: 1.2rem 1.3rem; margin-bottom: 1.2rem;
+}
+.timeline-block-title {
+  font-family: 'Noto Serif TC', serif;
+  color: var(--navy); font-weight: 700; font-size: 1.05rem;
+  margin-bottom: 0.9rem; letter-spacing: 0.05em;
+  padding-bottom: 0.6rem; border-bottom: 1px solid var(--border);
+}
+.pay-steps { margin-top: 0.5rem; }
+.pay-step {
+  display: flex; gap: 0.9rem; padding: 0.85rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+.pay-step:last-child { border-bottom: none; }
+.pay-step-num {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--navy); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.82rem; font-weight: 700;
+}
+.pay-step-content strong {
+  display: block; color: var(--navy);
+  font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem;
+}
+.pay-step-content span {
+  display: block; color: var(--text-mid);
+  font-size: 0.85rem; line-height: 1.6;
+}
+
+.faq-item {
+  background: white; border: 1px solid var(--border); border-radius: 4px;
+  margin-bottom: 0.7rem; overflow: hidden;
+}
+.faq-item summary {
+  padding: 1rem 1.2rem; cursor: pointer;
+  font-weight: 600; color: var(--navy); font-size: 0.95rem;
+  list-style: none; position: relative; padding-right: 2.5rem;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; position: absolute; right: 1.2rem; top: 50%;
+  transform: translateY(-50%); color: var(--gold);
+  font-size: 1.3rem; font-weight: 600; transition: transform 0.3s;
+}
+.faq-item[open] summary::after { content: '−'; }
+.faq-body {
+  padding: 0 1.2rem 1rem; color: var(--text-mid);
+  font-size: 0.88rem; line-height: 1.8;
+}
+
+.footer {
+  background: var(--navy); color: white; text-align: center;
+  padding: 2.5rem 1rem; margin-top: 2rem;
+}
+.footer .doctor-name {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.15rem; font-weight: 600;
+  margin-bottom: 0.3rem; letter-spacing: 0.1em;
+}
+.footer .clinic-name {
+  color: var(--gold-light); font-size: 0.85rem;
+  letter-spacing: 0.2em; margin-bottom: 1rem; font-weight: 500;
+}
+.footer p:last-child {
+  font-size: 0.75rem; color: rgba(255,255,255,0.6); letter-spacing: 0.1em;
+}
+
+.fade-in { opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 600px) {
+  .nav a { font-size: 0.76rem; padding: 0.9rem 0.65rem; }
+  .container { padding: 0 1rem; }
+  section { padding: 3rem 0; }
+  .card { padding: 1rem 1.1rem; }
+  .treatment-table, .compare-table { font-size: 0.8rem; }
+  .treatment-table thead th, .treatment-table tbody td,
+  .compare-table th, .compare-table td { padding: 0.6rem 0.5rem; }
+  .compare-table thead th { font-size: 0.72rem; }
+  .section-label { font-size: 0.72rem; letter-spacing: 0.3em; }
+}
 </style>
 </head>
 <body>
 
-<header class="doctor-header">
-  <div class="doctor-name">戴致鴻 醫師</div>
-  <div class="clinic-name">陽安牙醫診所</div>
-  <div class="divider"></div>
-</header>
-
-<div class="title-block">
-  <div class="eyebrow">Treatment Plan</div>
-  <h1>前牙美學修復計畫</h1>
-  <div class="patient-name"><strong>病患</strong>葛芸希 小姐</div>
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Digital Smile Design</div>
+    <h1>前牙美學修復計畫</h1>
+    <p class="patient-name">葛芸希 小姐</p>
+    <p class="clinic-info"><span>陽安牙醫</span><span>戴致鴻 醫師</span></p>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
 </div>
 
-<section>
-  <h2><span class="num">1</span>目前口腔狀況</h2>
-  <p>經臨床檢查與影像評估，針對您所關心的前牙區域，目前的狀況整理如下：</p>
-  <ul>
-    <li><strong>外觀與對稱性：</strong>上顎前牙區牙齒形狀、長度比例略有不對稱，影響微笑線整體協調。</li>
-    <li><strong>顏色：</strong>前牙出現色素沉積與表面染色，與相鄰牙齒色差較明顯。</li>
-    <li><strong>舊有修復體：</strong>原有樹脂補綴已出現邊緣染色及輕微磨耗，建議重新修整。</li>
-    <li><strong>牙齦狀況：</strong>牙齦健康穩定，無明顯紅腫或出血，適合進行美學修復療程。</li>
-    <li><strong>齒列排列：</strong>前牙輕微不齊，於美學修復前可透過微調塑形達到理想比例。</li>
-  </ul>
-</section>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#condition">牙齒狀況</a>
+    <a href="#plans">治療方案</a>
+    <a href="#fee">費用比較</a>
+    <a href="#faq">常見問題</a>
+  </div>
+</nav>
 
-<section>
-  <h2><span class="num">2</span>建議治療方案</h2>
-  <p>依據您的美學需求與牙齒保留最大化的原則，建議採用以下治療組合，以兼顧自然外觀、長期穩定與最低侵入性：</p>
-
-  <h3>主要治療</h3>
-  <ul>
-    <li><strong>陶瓷貼片（Porcelain Veneers）：</strong>針對上顎前牙 6 顆進行薄層陶瓷貼片修復，改善顏色、形狀與對稱性。</li>
-    <li><strong>牙齒美白：</strong>於貼片製作前先進行居家美白，統一整體齒列色澤。</li>
-    <li><strong>牙齦輪廓微調：</strong>視需要進行輕度牙齦塑形，使牙齒長寬比與微笑線更協調。</li>
-  </ul>
-
-  <h3>治療目標</h3>
-  <ul>
-    <li>建立自然、協調的前牙美學比例。</li>
-    <li>改善顏色不均與舊有修復體邊緣染色。</li>
-    <li>最大化保留自然齒質，維持長期結構穩定。</li>
-  </ul>
-</section>
-
-<section>
-  <h2><span class="num">3</span>療程時程</h2>
-  <ol class="timeline" style="list-style: none; padding-left: 0;">
-    <li>
-      <div class="phase">STEP 1 ｜ 第 1 次回診</div>
-      <div class="phase-title">診斷與數位模擬（約 60 分鐘）</div>
-      <div class="phase-desc">完整影像、口內掃描、數位微笑設計（DSD），共同確認預期效果。</div>
-    </li>
-    <li>
-      <div class="phase">STEP 2 ｜ 第 2–3 週</div>
-      <div class="phase-title">居家美白療程</div>
-      <div class="phase-desc">配戴客製化美白牙托，每日 4–6 小時，為期約 2 週。</div>
-    </li>
-    <li>
-      <div class="phase">STEP 3 ｜ 第 4 週</div>
-      <div class="phase-title">試戴模擬（Mock-up）</div>
-      <div class="phase-desc">於口內暫時呈現最終外觀，確認比例、長度與笑容線後正式開始修復。</div>
-    </li>
-    <li>
-      <div class="phase">STEP 4 ｜ 第 5 週</div>
-      <div class="phase-title">牙齒微幅修形與取模</div>
-      <div class="phase-desc">極薄量修磨前牙表面，數位取模送至技工所製作客製化陶瓷貼片。</div>
-    </li>
-    <li>
-      <div class="phase">STEP 5 ｜ 第 7–8 週</div>
-      <div class="phase-title">貼片黏著與最終調整</div>
-      <div class="phase-desc">試戴、色澤微調、黏著、咬合檢查。</div>
-    </li>
-    <li>
-      <div class="phase">STEP 6 ｜ 完成後 2 週</div>
-      <div class="phase-title">術後追蹤</div>
-      <div class="phase-desc">檢查牙齦適應、咬合穩定及貼片邊緣密合度。</div>
-    </li>
-  </ol>
-</section>
-
-<section>
-  <h2><span class="num">4</span>費用說明</h2>
-  <table class="cost-table">
-    <thead>
-      <tr>
-        <th>項目</th>
-        <th>數量</th>
-        <th style="text-align:right;">費用（NT$）</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>數位微笑設計（DSD）</td>
-        <td>1 次</td>
-        <td class="amount">—（療程內含）</td>
-      </tr>
-      <tr>
-        <td>居家美白套組</td>
-        <td>1 套</td>
-        <td class="amount">8,000</td>
-      </tr>
-      <tr>
-        <td>陶瓷貼片（單顆）</td>
-        <td>6 顆</td>
-        <td class="amount">30,000 / 顆</td>
-      </tr>
-      <tr>
-        <td>牙齦輪廓微調（如需）</td>
-        <td>視實際狀況</td>
-        <td class="amount">3,000–6,000</td>
-      </tr>
-      <tr class="total">
-        <td colspan="2">預估總費用</td>
-        <td class="amount">約 188,000 – 194,000</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="cost-note">
-    ※ 以上為預估金額，實際費用將依最終治療計畫與使用材料內容調整。<br>
-    ※ 本院提供分期付款方案，詳情可於診間洽詢。
+<section id="condition">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">Current Condition</span>
+      <h2 class="section-title">目前牙齒狀況</h2>
+      <div class="card"><div class="card-icon">🦷</div>
+        <h3>側門牙天生較小</h3>
+        <p>左右兩顆側門牙天生較小，笑起來不夠飽滿，是影響微笑美觀的主要原因。</p>
+      </div>
+      <div class="card"><div class="card-icon">⚠️</div>
+        <h3>右上犬齒內側蛀牙</h3>
+        <p>右上犬齒內側有大面積補牙，補牙處已再次蛀牙，需要整顆保護起來。</p>
+      </div>
+      <div class="card"><div class="card-icon">🎨</div>
+        <h3>牙齒顏色不均勻</h3>
+        <p>前排牙齒表面顏色不均勻，有明顯的補牙痕跡，影響整體美觀。</p>
+      </div>
+      <div class="card"><div class="card-icon">📐</div>
+        <h3>牙齦線不對稱</h3>
+        <p>右上犬齒的牙齦位置偏低，左右不對稱，可透過水雷射調整讓兩邊一致。</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section>
-  <h2><span class="num">5</span>注意事項與後續維護</h2>
-  <ul class="note-list">
-    <li>陶瓷貼片具有高度耐磨與抗染色特性，正常使用下可維持 10 年以上。</li>
-    <li>請避免以前牙直接啃咬過硬食物（例如：骨頭、帶殼堅果、冰塊）。</li>
-    <li>建議配戴夜間咬合板，以減少夜間磨牙對貼片造成的壓力。</li>
-    <li>每日使用牙線與軟毛牙刷，維持牙齦健康與貼片邊緣密合。</li>
-    <li>建議每 6 個月回診洗牙與檢查一次，以確保長期穩定。</li>
-    <li>若有撞擊或異常感受，請儘速回診檢查。</li>
-  </ul>
+<section id="plans">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">Treatment Plans</span>
+      <h2 class="section-title">治療方案</h2>
+      <p class="plan-intro">根據您目前的牙齒狀況，提供三個選擇方案讓您參考。<strong>方案一</strong>為完整修復，改善幅度最大；<strong>方案二（2A / 2B）</strong>為局部修復，聚焦於最關鍵的問題——側門牙飽滿度與右上犬齒蛀牙。</p>
+
+      <div class="plan-block">
+        <div class="plan-header">
+          <span class="plan-tag tag-a">方案一 ・ 完整修復</span>
+          <div class="plan-title">六顆美學修復 + 牙冠增長 + 美白</div>
+          <div class="plan-subtitle">改善幅度最完整，整體對稱與協調性最佳</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-pros-cons">
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>側門牙飽滿度明顯改善</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>正中門牙切端修整至平整對稱</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>整排牙齒顏色一致，無色差</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>牙齦線左右對稱，微笑線完整</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>右上犬齒蛀牙徹底處理</span></div>
+          </div>
+          <table class="treatment-table">
+            <thead><tr><th>項目</th><th class="center">顆數</th><th>備註</th></tr></thead>
+            <tbody>
+              <tr><td>瓷貼片</td><td class="center">5</td><td>門牙×2、側門牙×2、左上犬齒×1</td></tr>
+              <tr><td>全瓷冠</td><td class="center">1</td><td>右上犬齒</td></tr>
+              <tr><td>水雷射牙冠增長術</td><td class="center">1</td><td>右上犬齒，調整牙齦線對稱</td></tr>
+              <tr><td>冷光＋居家美白</td><td class="center">—</td><td>整體色階提亮</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="plan-block">
+        <div class="plan-header">
+          <span class="plan-tag tag-b">方案 2A ・ 局部修復</span>
+          <div class="plan-title">三顆修復 + 牙冠增長 + 美白</div>
+          <div class="plan-subtitle">處理最關鍵問題，保留牙齦線對稱度</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-pros-cons">
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>側門牙飽滿度改善</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>右上犬齒蛀牙徹底處理</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>牙齦線對稱（搭配牙冠增長）</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>整體牙齒色階透過美白提亮</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon no">✗</span><span>正中門牙切端仍維持原狀（不平整）</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon no">✗</span><span>左上犬齒未修復，可能與新貼片有些微色差</span></div>
+          </div>
+          <table class="treatment-table">
+            <thead><tr><th>項目</th><th class="center">顆數</th><th>備註</th></tr></thead>
+            <tbody>
+              <tr><td>瓷貼片</td><td class="center">2</td><td>左右側門牙</td></tr>
+              <tr><td>全瓷冠</td><td class="center">1</td><td>右上犬齒</td></tr>
+              <tr><td>水雷射牙冠增長術</td><td class="center">1</td><td>右上犬齒，調整牙齦線對稱</td></tr>
+              <tr><td>冷光＋居家美白</td><td class="center">—</td><td>整體色階提亮</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="plan-block">
+        <div class="plan-header">
+          <span class="plan-tag tag-c">方案 2B ・ 簡化版</span>
+          <div class="plan-title">先美白 → 三顆修復（不含牙冠增長）</div>
+          <div class="plan-subtitle">最精簡的方案，美白後一個月再依新色階製作</div>
+        </div>
+        <div class="plan-body">
+          <div class="plan-pros-cons">
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>側門牙飽滿度改善</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>右上犬齒蛀牙徹底處理</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon yes">✓</span><span>先美白穩定色階後，修復體配色更精準</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon no">✗</span><span>正中門牙切端仍維持原狀</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon no">✗</span><span>左上犬齒未修復</span></div>
+            <div class="pros-cons-row"><span class="pros-cons-icon no">✗</span><span>牙齦線仍左右不對稱</span></div>
+          </div>
+          <table class="treatment-table">
+            <thead><tr><th>項目</th><th class="center">顆數</th><th>備註</th></tr></thead>
+            <tbody>
+              <tr><td>冷光＋居家美白</td><td class="center">—</td><td>第一階段先進行，穩定色階</td></tr>
+              <tr><td>瓷貼片</td><td class="center">2</td><td>左右側門牙（美白後 1 個月再製作）</td></tr>
+              <tr><td>全瓷冠</td><td class="center">1</td><td>右上犬齒（美白後 1 個月再製作）</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2><span class="num">6</span>備註與溝通事項</h2>
-  <p>本計畫書根據目前臨床資料擬訂，最終治療內容仍需依正式看診與討論後確認。任何療程細節、費用調整或替代方案，皆歡迎於回診時與醫師充分討論，我們將以您的需求與舒適為優先考量。</p>
+<section id="fee" style="background: rgba(184,147,90,0.05);">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">Fee Comparison</span>
+      <h2 class="section-title">費用比較</h2>
+      <table class="compare-table">
+        <thead><tr><th>項目</th><th>方案一</th><th>方案 2A</th><th>方案 2B</th></tr></thead>
+        <tbody>
+          <tr><td>瓷貼片</td><td>28,000×5<br><small style="color:#888">(優惠)</small></td><td>30,000×2</td><td>30,000×2</td></tr>
+          <tr><td>全瓷冠</td><td>28,000×1<br><small style="color:#888">(優惠)</small></td><td>30,000×1</td><td>30,000×1</td></tr>
+          <tr><td>水雷射牙冠增長術</td><td>6,000</td><td>6,000</td><td>—</td></tr>
+          <tr><td>冷光＋居家美白</td><td>23,000</td><td>23,000</td><td>23,000</td></tr>
+          <tr class="total-row"><td>總計</td><td>NT$197,000</td><td>NT$119,000</td><td>NT$113,000</td></tr>
+        </tbody>
+      </table>
+      <div class="fee-note">方案一貼片／全瓷冠為 6 顆整體優惠價 NT$28,000/顆（原價 NT$30,000/顆）</div>
+      <div class="fee-note">方案二（2A／2B）為單顆原價 NT$30,000/顆</div>
+      <div class="fee-note">水雷射牙冠增長術搭配全瓷修復優惠價 NT$6,000（原價 NT$12,000）</div>
+      <div class="fee-note">美白為整套冷光＋居家美白，含自費牙托與藥劑</div>
+    </div>
+  </div>
 </section>
 
-<div class="signature-block">
-  <div><strong>主治醫師</strong>　戴致鴻 醫師</div>
-  <div><strong>診所</strong>　陽安牙醫診所</div>
-  <div style="margin-top:8px; font-size:12px; color:#999;">本計畫書內容僅供病患本人參考</div>
-</div>
+<section id="faq" style="background: rgba(184,147,90,0.05);">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">常見問題</h2>
 
-<div class="footer">
-  <a href="../index.html">← 返回首頁</a>
-</div>
+      <details class="faq-item">
+        <summary>方案二只做三顆，為什麼費用單價比方案一高？</summary>
+        <div class="faq-body">方案一為六顆整體療程，採套組優惠價 NT$28,000/顆；方案二僅做三顆，回到單顆原價 NT$30,000/顆。這是大多數美學牙科的收費邏輯——整組療程因整體設計與製作的一致性，可給予病患較優惠的單價。</div>
+      </details>
 
+      <details class="faq-item">
+        <summary>方案 2A 與 2B 的差別在哪裡？</summary>
+        <div class="faq-body">兩者修復項目相同（2 顆貼片＋1 顆全瓷冠＋美白），差別只在右上犬齒的牙齦線——2A 有做水雷射牙冠增長術讓左右對稱，2B 沒做所以牙齦線會保持原本的左右不一。價差僅 NT$6,000。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>只做三顆，整體效果會差很多嗎？</summary>
+        <div class="faq-body">三顆方案已能處理最關鍵的兩個問題——側門牙偏小、右上犬齒蛀牙。透過美白改善整體色階後，整體觀感會有明顯提升。但正中門牙切端不平整、左上犬齒與新貼片的細微色差，這兩點無法改善，在近距離觀察時仍可看出。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>為什麼方案 2B 要先美白、等一個月再做修復？</summary>
+        <div class="faq-body">美白後牙齒色階會持續微幅回彈，約一個月後才會完全穩定。如果美白後馬上比色製作修復體，等一個月後牙齒顏色穩定下來，反而可能與修復體出現色差。等色階穩定後再比色，修復體的顏色才能與自然牙完美融合。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>療程期間會很不舒服嗎？</summary>
+        <div class="faq-body">所有療程皆於局部麻醉下進行，過程中不會疼痛。製備後到最終黏著之間會配戴臨時貼片／牙冠，外觀與功能皆接近正式修復體。水雷射牙冠增長術傷口小、癒合快，術後 1–2 天可能有輕微腫脹感，通常不需服用止痛藥。</div>
+      </details>
+
+      <details class="faq-item">
+        <summary>方案選擇後還可以再升級嗎？</summary>
+        <div class="faq-body">可以。例如先做方案 2A 或 2B，日後仍可再加做其他前牙修復。但需注意，後期單顆加做仍為單顆原價，且需重新進行微笑設計與比色。建議一次規劃清楚最理想的範圍，整體性與費用效益都較佳。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="doctor-name">戴致鴻 醫師</p>
+  <p class="clinic-name">陽安牙醫</p>
+  <p>本計畫書內容僅供病患本人參考</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+  navLinks.forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+  });
+});
+</script>
 </body>
 </html>
