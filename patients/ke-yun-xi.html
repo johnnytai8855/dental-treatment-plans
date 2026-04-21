@@ -23,7 +23,6 @@
   --text-light: #6b6b6b;
   --border: #e8e4dc;
 }
-
 /* 強制淺色模式 - 對抗 LINE/FB 等 in-app browser 的深色模式覆蓋 */
 html, body {
   background-color: #faf8f3 !important;
@@ -67,7 +66,6 @@ html, body {
     color: #1a2744 !important;
   }
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
   font-family: 'Noto Sans TC', sans-serif;
@@ -119,7 +117,6 @@ body {
   animation: pulse 2s infinite;
 }
 @keyframes pulse { 0%,100% { opacity: 0.55; } 50% { opacity: 0.95; } }
-
 .nav {
   position: sticky; top: 0;
   background: rgba(250,248,243,0.97); backdrop-filter: blur(12px);
@@ -137,7 +134,6 @@ body {
   flex-shrink: 0; opacity: 0.75;
 }
 .nav a.active { border-bottom-color: var(--gold); opacity: 1; font-weight: 700; }
-
 section { padding: 3.5rem 0; }
 .container { max-width: 800px; margin: 0 auto; padding: 0 1.2rem; }
 .section-label {
@@ -152,7 +148,6 @@ section { padding: 3.5rem 0; }
   color: var(--navy); font-weight: 700;
   margin-bottom: 2rem; letter-spacing: 0.05em;
 }
-
 .card {
   background: white; border: 1px solid var(--border); border-left: 3px solid var(--gold);
   padding: 1.2rem 1.3rem; margin-bottom: 1rem; border-radius: 2px;
@@ -164,13 +159,11 @@ section { padding: 3.5rem 0; }
   margin-bottom: 0.4rem; letter-spacing: 0.05em;
 }
 .card p { color: var(--text-mid); font-size: 0.9rem; line-height: 1.75; }
-
 .plan-intro {
   margin-bottom: 1.5rem; color: var(--text-mid);
   font-size: 0.92rem; line-height: 1.8;
 }
 .plan-intro strong { color: var(--navy); font-weight: 700; }
-
 .plan-block {
   background: white; border: 1px solid var(--border); border-radius: 4px;
   margin-bottom: 1.2rem; overflow: hidden;
@@ -205,7 +198,6 @@ section { padding: 3.5rem 0; }
 .pros-cons-icon { flex-shrink: 0; width: 20px; font-weight: 700; }
 .pros-cons-icon.yes { color: #3d6b4a; }
 .pros-cons-icon.no { color: #b5603f; }
-
 .treatment-table {
   width: 100%; border-collapse: collapse; font-size: 0.88rem;
   background: white; border-radius: 4px; overflow: hidden;
@@ -222,7 +214,6 @@ section { padding: 3.5rem 0; }
 }
 .treatment-table tbody tr:last-child td { border-bottom: none; }
 .treatment-table .center { text-align: center; }
-
 .compare-table {
   width: 100%; border-collapse: collapse; font-size: 0.85rem;
   background: white; margin-bottom: 1rem; border-radius: 4px;
@@ -245,13 +236,11 @@ section { padding: 3.5rem 0; }
   background: rgba(184,147,90,0.15); font-weight: 700; color: var(--navy);
 }
 .compare-table .total-row td { padding: 0.95rem 0.5rem; font-size: 0.92rem; }
-
 .fee-note {
   font-size: 0.82rem; color: var(--text-mid);
   margin: 0.6rem 0 0; padding-left: 0.8rem;
   border-left: 2px solid var(--gold-light); line-height: 1.7;
 }
-
 .timeline-block {
   background: white; border: 1px solid var(--border); border-radius: 4px;
   padding: 1.2rem 1.3rem; margin-bottom: 1.2rem;
@@ -282,7 +271,6 @@ section { padding: 3.5rem 0; }
   display: block; color: var(--text-mid);
   font-size: 0.85rem; line-height: 1.6;
 }
-
 .faq-item {
   background: white; border: 1px solid var(--border); border-radius: 4px;
   margin-bottom: 0.7rem; overflow: hidden;
@@ -303,7 +291,6 @@ section { padding: 3.5rem 0; }
   padding: 0 1.2rem 1rem; color: var(--text-mid);
   font-size: 0.88rem; line-height: 1.8;
 }
-
 .footer {
   background: var(--navy); color: white; text-align: center;
   padding: 2.5rem 1rem; margin-top: 2rem;
@@ -320,11 +307,9 @@ section { padding: 3.5rem 0; }
 .footer p:last-child {
   font-size: 0.75rem; color: rgba(255,255,255,0.6); letter-spacing: 0.1em;
 }
-
 .fade-in { opacity: 0; transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-in.visible { opacity: 1; transform: translateY(0); }
-
 @media (max-width: 600px) {
   .nav a { font-size: 0.76rem; padding: 0.9rem 0.65rem; }
   .container { padding: 0 1rem; }
@@ -339,7 +324,6 @@ section { padding: 3.5rem 0; }
 </style>
 </head>
 <body>
-
 <div class="hero">
   <div class="hero-content">
     <div class="hero-badge">Digital Smile Design</div>
@@ -349,7 +333,6 @@ section { padding: 3.5rem 0; }
   </div>
   <div class="scroll-hint">SCROLL</div>
 </div>
-
 <nav class="nav">
   <div class="nav-inner">
     <a href="#condition">牙齒狀況</a>
@@ -358,7 +341,6 @@ section { padding: 3.5rem 0; }
     <a href="#faq">常見問題</a>
   </div>
 </nav>
-
 <section id="condition">
   <div class="container">
     <div class="fade-in">
@@ -383,14 +365,12 @@ section { padding: 3.5rem 0; }
     </div>
   </div>
 </section>
-
 <section id="plans">
   <div class="container">
     <div class="fade-in">
       <span class="section-label">Treatment Plans</span>
       <h2 class="section-title">治療方案</h2>
       <p class="plan-intro">根據您目前的牙齒狀況，提供三個選擇方案讓您參考。<strong>方案一</strong>為完整修復，改善幅度最大；<strong>方案二（2A / 2B）</strong>為局部修復，聚焦於最關鍵的問題——側門牙飽滿度與右上犬齒蛀牙。</p>
-
       <div class="plan-block">
         <div class="plan-header">
           <span class="plan-tag tag-a">方案一 ・ 完整修復</span>
@@ -416,7 +396,6 @@ section { padding: 3.5rem 0; }
           </table>
         </div>
       </div>
-
       <div class="plan-block">
         <div class="plan-header">
           <span class="plan-tag tag-b">方案 2A ・ 局部修復</span>
@@ -443,7 +422,6 @@ section { padding: 3.5rem 0; }
           </table>
         </div>
       </div>
-
       <div class="plan-block">
         <div class="plan-header">
           <span class="plan-tag tag-c">方案 2B ・ 簡化版</span>
@@ -472,7 +450,6 @@ section { padding: 3.5rem 0; }
     </div>
   </div>
 </section>
-
 <section id="fee" style="background: rgba(184,147,90,0.05);">
   <div class="container">
     <div class="fade-in">
@@ -495,38 +472,31 @@ section { padding: 3.5rem 0; }
     </div>
   </div>
 </section>
-
 <section id="faq" style="background: rgba(184,147,90,0.05);">
   <div class="container">
     <div class="fade-in">
       <span class="section-label">FAQ</span>
       <h2 class="section-title">常見問題</h2>
-
       <details class="faq-item">
         <summary>方案二只做三顆，為什麼費用單價比方案一高？</summary>
         <div class="faq-body">方案一為六顆整體療程，採套組優惠價 NT$28,000/顆；方案二僅做三顆，回到單顆原價 NT$30,000/顆。這是大多數美學牙科的收費邏輯——整組療程因整體設計與製作的一致性，可給予病患較優惠的單價。</div>
       </details>
-
       <details class="faq-item">
         <summary>方案 2A 與 2B 的差別在哪裡？</summary>
         <div class="faq-body">兩者修復項目相同（2 顆貼片＋1 顆全瓷冠＋美白），差別只在右上犬齒的牙齦線——2A 有做水雷射牙冠增長術讓左右對稱，2B 沒做所以牙齦線會保持原本的左右不一。價差僅 NT$6,000。</div>
       </details>
-
       <details class="faq-item">
         <summary>只做三顆，整體效果會差很多嗎？</summary>
         <div class="faq-body">三顆方案已能處理最關鍵的兩個問題——側門牙偏小、右上犬齒蛀牙。透過美白改善整體色階後，整體觀感會有明顯提升。但正中門牙切端不平整、左上犬齒與新貼片的細微色差，這兩點無法改善，在近距離觀察時仍可看出。</div>
       </details>
-
       <details class="faq-item">
         <summary>為什麼方案 2B 要先美白、等一個月再做修復？</summary>
         <div class="faq-body">美白後牙齒色階會持續微幅回彈，約一個月後才會完全穩定。如果美白後馬上比色製作修復體，等一個月後牙齒顏色穩定下來，反而可能與修復體出現色差。等色階穩定後再比色，修復體的顏色才能與自然牙完美融合。</div>
       </details>
-
       <details class="faq-item">
         <summary>療程期間會很不舒服嗎？</summary>
         <div class="faq-body">所有療程皆於局部麻醉下進行，過程中不會疼痛。製備後到最終黏著之間會配戴臨時貼片／牙冠，外觀與功能皆接近正式修復體。水雷射牙冠增長術傷口小、癒合快，術後 1–2 天可能有輕微腫脹感，通常不需服用止痛藥。</div>
       </details>
-
       <details class="faq-item">
         <summary>方案選擇後還可以再升級嗎？</summary>
         <div class="faq-body">可以。例如先做方案 2A 或 2B，日後仍可再加做其他前牙修復。但需注意，後期單顆加做仍為單顆原價，且需重新進行微笑設計與比色。建議一次規劃清楚最理想的範圍，整體性與費用效益都較佳。</div>
@@ -534,19 +504,16 @@ section { padding: 3.5rem 0; }
     </div>
   </div>
 </section>
-
 <footer class="footer">
   <p class="doctor-name">戴致鴻 醫師</p>
   <p class="clinic-name">陽安牙醫</p>
   <p>本計畫書內容僅供病患本人參考</p>
 </footer>
-
 <script>
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav a');
 window.addEventListener('scroll', () => {
