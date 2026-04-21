@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>葛芸希 小姐 - 前牙美學修復計畫 ｜ 陽安牙醫診所</title>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Arial', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+    background: #faf8f3;
+    color: #1a2744;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Header */
+  .doctor-header {
+    text-align: center;
+    padding: 28px 20px 24px;
+    border-bottom: 1px solid #e8e4dc;
+    margin-bottom: 32px;
+  }
+  .doctor-header .doctor-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a2744;
+    letter-spacing: 1px;
+  }
+  .doctor-header .clinic-name {
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+  .doctor-header .divider {
+    width: 40px;
+    height: 2px;
+    background: #9c7a42;
+    margin: 14px auto 0;
+    border-radius: 2px;
+  }
+
+  /* Title */
+  .title-block { text-align: center; margin-bottom: 40px; }
+  .title-block .eyebrow {
+    font-size: 12px;
+    color: #9c7a42;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .title-block h1 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a2744;
+    margin: 0 0 8px;
+    line-height: 1.4;
+  }
+  .title-block .patient-name {
+    font-size: 15px;
+    color: #666;
+    margin-top: 10px;
+  }
+  .title-block .patient-name strong {
+    color: #1a2744;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+
+  /* Section card */
+  section {
+    background: white;
+    border: 1px solid #e8e4dc;
+    border-left: 4px solid #9c7a42;
+    border-radius: 8px;
+    padding: 26px 28px;
+    margin-bottom: 20px;
+  }
+  section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a2744;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f0ece3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  section h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: #9c7a42;
+    color: white;
+    font-size: 13px;
+    border-radius: 50%;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  section h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a2744;
+    margin: 18px 0 8px;
+  }
+  section p {
+    margin: 0 0 10px;
+    color: #333;
+    font-size: 15px;
+  }
+  section ul {
+    margin: 8px 0 12px;
+    padding-left: 20px;
+    color: #333;
+    font-size: 15px;
+  }
+  section ul li { margin-bottom: 6px; }
+
+  /* Timeline */
+  .timeline { list-style: none; padding: 0; margin: 0; }
+  .timeline li {
+    position: relative;
+    padding: 14px 0 14px 30px;
+    border-bottom: 1px dashed #efebe2;
+  }
+  .timeline li:last-child { border-bottom: none; }
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: 6px; top: 22px;
+    width: 8px; height: 8px;
+    background: #9c7a42;
+    border-radius: 50%;
+  }
+  .timeline li::after {
+    content: "";
+    position: absolute;
+    left: 9px; top: 30px;
+    bottom: -1px;
+    width: 2px;
+    background: #e8e4dc;
+  }
+  .timeline li:last-child::after { display: none; }
+  .timeline .phase {
+    font-size: 13px;
+    color: #9c7a42;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .timeline .phase-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1a2744;
+    margin-bottom: 2px;
+  }
+  .timeline .phase-desc {
+    font-size: 14px;
+    color: #555;
+  }
+
+  /* Cost table */
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  .cost-table th,
+  .cost-table td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #f0ece3;
+  }
+  .cost-table th {
+    background: #faf8f3;
+    color: #1a2744;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .cost-table td.amount {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: #1a2744;
+    font-weight: 500;
+  }
+  .cost-table tr.total td {
+    font-weight: 600;
+    color: #1a2744;
+    border-top: 2px solid #9c7a42;
+    border-bottom: none;
+    padding-top: 14px;
+    font-size: 16px;
+  }
+  .cost-note {
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: #faf8f3;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* Notes list */
+  .note-list { padding-left: 0; list-style: none; }
+  .note-list li {
+    padding: 10px 0 10px 24px;
+    position: relative;
+    border-bottom: 1px dashed #f0ece3;
+  }
+  .note-list li:last-child { border-bottom: none; }
+  .note-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0; top: 10px;
+    color: #9c7a42;
+    font-weight: 700;
+  }
+
+  /* Signature */
+  .signature-block {
+    margin-top: 28px;
+    padding: 20px 22px;
+    background: white;
+    border: 1px solid #e8e4dc;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    line-height: 1.8;
+  }
+  .signature-block strong { color: #1a2744; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e8e4dc;
+    font-size: 12px;
+    color: #999;
+    letter-spacing: 0.5px;
+  }
+  .footer a {
+    color: #9c7a42;
+    text-decoration: none;
+    margin-left: 8px;
+  }
+
+  /* Mobile */
+  @media (max-width: 560px) {
+    body { padding: 16px 14px 40px; }
+    .title-block h1 { font-size: 22px; }
+    section { padding: 20px 18px; }
+    section h2 { font-size: 16px; }
+    .cost-table th, .cost-table td { padding: 10px 6px; font-size: 14px; }
+  }
+
+  @media print {
+    body { background: white; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header class="doctor-header">
+  <div class="doctor-name">戴致鴻 醫師</div>
+  <div class="clinic-name">陽安牙醫診所</div>
+  <div class="divider"></div>
+</header>
+
+<div class="title-block">
+  <div class="eyebrow">Treatment Plan</div>
+  <h1>前牙美學修復計畫</h1>
+  <div class="patient-name"><strong>病患</strong>葛芸希 小姐</div>
+</div>
+
+<section>
+  <h2><span class="num">1</span>目前口腔狀況</h2>
+  <p>經臨床檢查與影像評估，針對您所關心的前牙區域，目前的狀況整理如下：</p>
+  <ul>
+    <li><strong>外觀與對稱性：</strong>上顎前牙區牙齒形狀、長度比例略有不對稱，影響微笑線整體協調。</li>
+    <li><strong>顏色：</strong>前牙出現色素沉積與表面染色，與相鄰牙齒色差較明顯。</li>
+    <li><strong>舊有修復體：</strong>原有樹脂補綴已出現邊緣染色及輕微磨耗，建議重新修整。</li>
+    <li><strong>牙齦狀況：</strong>牙齦健康穩定，無明顯紅腫或出血，適合進行美學修復療程。</li>
+    <li><strong>齒列排列：</strong>前牙輕微不齊，於美學修復前可透過微調塑形達到理想比例。</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">2</span>建議治療方案</h2>
+  <p>依據您的美學需求與牙齒保留最大化的原則，建議採用以下治療組合，以兼顧自然外觀、長期穩定與最低侵入性：</p>
+
+  <h3>主要治療</h3>
+  <ul>
+    <li><strong>陶瓷貼片（Porcelain Veneers）：</strong>針對上顎前牙 6 顆進行薄層陶瓷貼片修復，改善顏色、形狀與對稱性。</li>
+    <li><strong>牙齒美白：</strong>於貼片製作前先進行居家美白，統一整體齒列色澤。</li>
+    <li><strong>牙齦輪廓微調：</strong>視需要進行輕度牙齦塑形，使牙齒長寬比與微笑線更協調。</li>
+  </ul>
+
+  <h3>治療目標</h3>
+  <ul>
+    <li>建立自然、協調的前牙美學比例。</li>
+    <li>改善顏色不均與舊有修復體邊緣染色。</li>
+    <li>最大化保留自然齒質，維持長期結構穩定。</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">3</span>療程時程</h2>
+  <ol class="timeline" style="list-style: none; padding-left: 0;">
+    <li>
+      <div class="phase">STEP 1 ｜ 第 1 次回診</div>
+      <div class="phase-title">診斷與數位模擬（約 60 分鐘）</div>
+      <div class="phase-desc">完整影像、口內掃描、數位微笑設計（DSD），共同確認預期效果。</div>
+    </li>
+    <li>
+      <div class="phase">STEP 2 ｜ 第 2–3 週</div>
+      <div class="phase-title">居家美白療程</div>
+      <div class="phase-desc">配戴客製化美白牙托，每日 4–6 小時，為期約 2 週。</div>
+    </li>
+    <li>
+      <div class="phase">STEP 3 ｜ 第 4 週</div>
+      <div class="phase-title">試戴模擬（Mock-up）</div>
+      <div class="phase-desc">於口內暫時呈現最終外觀，確認比例、長度與笑容線後正式開始修復。</div>
+    </li>
+    <li>
+      <div class="phase">STEP 4 ｜ 第 5 週</div>
+      <div class="phase-title">牙齒微幅修形與取模</div>
+      <div class="phase-desc">極薄量修磨前牙表面，數位取模送至技工所製作客製化陶瓷貼片。</div>
+    </li>
+    <li>
+      <div class="phase">STEP 5 ｜ 第 7–8 週</div>
+      <div class="phase-title">貼片黏著與最終調整</div>
+      <div class="phase-desc">試戴、色澤微調、黏著、咬合檢查。</div>
+    </li>
+    <li>
+      <div class="phase">STEP 6 ｜ 完成後 2 週</div>
+      <div class="phase-title">術後追蹤</div>
+      <div class="phase-desc">檢查牙齦適應、咬合穩定及貼片邊緣密合度。</div>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2><span class="num">4</span>費用說明</h2>
+  <table class="cost-table">
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>數量</th>
+        <th style="text-align:right;">費用（NT$）</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>數位微笑設計（DSD）</td>
+        <td>1 次</td>
+        <td class="amount">—（療程內含）</td>
+      </tr>
+      <tr>
+        <td>居家美白套組</td>
+        <td>1 套</td>
+        <td class="amount">8,000</td>
+      </tr>
+      <tr>
+        <td>陶瓷貼片（單顆）</td>
+        <td>6 顆</td>
+        <td class="amount">30,000 / 顆</td>
+      </tr>
+      <tr>
+        <td>牙齦輪廓微調（如需）</td>
+        <td>視實際狀況</td>
+        <td class="amount">3,000–6,000</td>
+      </tr>
+      <tr class="total">
+        <td colspan="2">預估總費用</td>
+        <td class="amount">約 188,000 – 194,000</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cost-note">
+    ※ 以上為預估金額，實際費用將依最終治療計畫與使用材料內容調整。<br>
+    ※ 本院提供分期付款方案，詳情可於診間洽詢。
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">5</span>注意事項與後續維護</h2>
+  <ul class="note-list">
+    <li>陶瓷貼片具有高度耐磨與抗染色特性，正常使用下可維持 10 年以上。</li>
+    <li>請避免以前牙直接啃咬過硬食物（例如：骨頭、帶殼堅果、冰塊）。</li>
+    <li>建議配戴夜間咬合板，以減少夜間磨牙對貼片造成的壓力。</li>
+    <li>每日使用牙線與軟毛牙刷，維持牙齦健康與貼片邊緣密合。</li>
+    <li>建議每 6 個月回診洗牙與檢查一次，以確保長期穩定。</li>
+    <li>若有撞擊或異常感受，請儘速回診檢查。</li>
+  </ul>
+</section>
+
+<section>
+  <h2><span class="num">6</span>備註與溝通事項</h2>
+  <p>本計畫書根據目前臨床資料擬訂，最終治療內容仍需依正式看診與討論後確認。任何療程細節、費用調整或替代方案，皆歡迎於回診時與醫師充分討論，我們將以您的需求與舒適為優先考量。</p>
+</section>
+
+<div class="signature-block">
+  <div><strong>主治醫師</strong>　戴致鴻 醫師</div>
+  <div><strong>診所</strong>　陽安牙醫診所</div>
+  <div style="margin-top:8px; font-size:12px; color:#999;">本計畫書內容僅供病患本人參考</div>
+</div>
+
+<div class="footer">
+  <a href="../index.html">← 返回首頁</a>
+</div>
+
+</body>
+</html>
